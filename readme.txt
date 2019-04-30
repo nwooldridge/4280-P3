@@ -37,3 +37,34 @@ Begin
   X1 = 1 + 2 :
   Output [ X2 ] :
 End
+
+The static semantics in this project looks for identifiers and whether they are undefined or are being redefined. It follows local
+and global scoping similar to C, where:
+
+int x;
+int main() {
+    int x;
+    {
+        int x;
+    }
+    
+    return 0;
+}
+
+would not raise an error but:
+
+int x;
+int x;
+int main() {
+    return 0;
+}
+
+or 
+
+int main() {
+    int x;
+    int x;
+    return 0;
+}
+
+would raise an error. 
