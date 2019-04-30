@@ -3,7 +3,7 @@ Same as P2 with very  simple static semantics added
 
 Based on this BNF:
 
-<program>  ->     <vars> <block> <br>
+<program>  ->     <vars> <block>
 <block>       ->      Begin <vars> <stats> End
 <vars>         ->      empty | INT Identifier Integer <vars> 
 <expr>        ->      <A> + <expr> | <A> - <expr> | <A>
